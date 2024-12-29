@@ -1,0 +1,455 @@
+CREATE TABLE dbo.AllstarFull (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    gameNum VARCHAR(1),
+    gameID VARCHAR(12),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    GP VARCHAR(1),
+    startingPos VARCHAR(3)
+);
+
+CREATE TABLE dbo.Appearances (
+    yearID VARCHAR(4),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    playerID VARCHAR(9),
+    G_all VARCHAR(3),
+    GS VARCHAR(3),
+    G_batting VARCHAR(3),
+    G_defense VARCHAR(3),
+    G_p VARCHAR(3),
+    G_c VARCHAR(3),
+    G_1b VARCHAR(3),
+    G_2b VARCHAR(3),
+    G_3b VARCHAR(3),
+    G_ss VARCHAR(3),
+    G_lf VARCHAR(3),
+    G_cf VARCHAR(3),
+    G_rf VARCHAR(3),
+    G_of VARCHAR(3),
+    G_dh VARCHAR(3),
+    G_ph VARCHAR(3),
+    G_pr VARCHAR(3)
+);
+
+CREATE TABLE dbo.AwardsManagers (
+    playerID VARCHAR(9),
+    awardID VARCHAR(25),
+    yearID VARCHAR(4),
+    lgID VARCHAR(2),
+    tie VARCHAR(1),
+    notes VARCHAR(1)
+);
+
+CREATE TABLE dbo.AwardsPlayers (
+    playerID VARCHAR(9),
+    awardID VARCHAR(35),
+    yearID VARCHAR(4),
+    lgID VARCHAR(2),
+    tie VARCHAR(1),
+    notes VARCHAR(10)
+);
+
+CREATE TABLE dbo.AwardsShareManagers (
+    awardID VARCHAR(25),
+    yearID VARCHAR(4),
+    lgID VARCHAR(2),
+    playerID VARCHAR(9),
+    pointsWon VARCHAR(3),
+    pointsMax VARCHAR(3),
+    votesFirst VARCHAR(3)
+);
+
+CREATE TABLE dbo.AwardsSharePlayers (
+    awardID VARCHAR(20),
+    yearID VARCHAR(4),
+    lgID VARCHAR(2),
+    playerID VARCHAR(9),
+    pointsWon VARCHAR(3),
+    pointsMax VARCHAR(3),
+    votesFirst VARCHAR(3)
+);
+
+CREATE TABLE dbo.Batting (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    stint VARCHAR(1),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    G VARCHAR(3),
+    G_batting VARCHAR(3),
+    AB VARCHAR(3),
+    R VARCHAR(3),
+    H VARCHAR(3),
+    2B VARCHAR(2),
+    3B VARCHAR(2),
+    HR VARCHAR(2),
+    RBI VARCHAR(3),
+    SB VARCHAR(3),
+    CS VARCHAR(2),
+    BB VARCHAR(3),
+    SO VARCHAR(3),
+    IBB VARCHAR(3),
+    HBP VARCHAR(2),
+    SH VARCHAR(2),
+    SF VARCHAR(2),
+    GIDP VARCHAR(2),
+    G_old VARCHAR(1)
+);
+
+CREATE TABLE dbo.BattingPost (
+    yearID VARCHAR(4),
+    round VARCHAR(5),
+    playerID VARCHAR(9),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    G VARCHAR(2),
+    AB VARCHAR(2),
+    R VARCHAR(2),
+    H VARCHAR(2),
+    2B VARCHAR(1),
+    3B VARCHAR(1),
+    HR VARCHAR(1),
+    RBI VARCHAR(2),
+    SB VARCHAR(2),
+    CS VARCHAR(1),
+    BB VARCHAR(2),
+    SO VARCHAR(2),
+    IBB VARCHAR(1),
+    HBP VARCHAR(1),
+    SH VARCHAR(1),
+    SF VARCHAR(1),
+    GIDP VARCHAR(2)
+);
+
+CREATE TABLE dbo.CollegePlaying (
+    playerID VARCHAR(9),
+    schoolID VARCHAR(13),
+    yearID VARCHAR(5)
+);
+
+CREATE TABLE dbo.Fielding (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    stint VARCHAR(1),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    POS VARCHAR(2),
+    G VARCHAR(3),
+    GS VARCHAR(3),
+    InnOuts VARCHAR(4),
+    PO VARCHAR(4),
+    A VARCHAR(3),
+    E VARCHAR(3),
+    DP VARCHAR(3),
+    PB VARCHAR(3),
+    WP VARCHAR(2),
+    SB VARCHAR(3),
+    CS VARCHAR(3),
+    ZR VARCHAR(3)
+);
+
+CREATE TABLE dbo.FieldingOF (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    stint VARCHAR(1),
+    Glf VARCHAR(3),
+    Gcf VARCHAR(3),
+    Grf VARCHAR(4)
+);
+
+CREATE TABLE dbo.FieldingOFsplit (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    stint VARCHAR(1),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    POS VARCHAR(2),
+    G VARCHAR(3),
+    GS VARCHAR(3),
+    InnOuts VARCHAR(4),
+    PO VARCHAR(3),
+    A VARCHAR(2),
+    E VARCHAR(2),
+    DP VARCHAR(1),
+    PB VARCHAR(0),
+    WP VARCHAR(0),
+    SB VARCHAR(0),
+    CS VARCHAR(0),
+    ZR VARCHAR(1)
+);
+
+CREATE TABLE dbo.FieldingPost (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    round VARCHAR(5),
+    POS VARCHAR(2),
+    G VARCHAR(1),
+    GS VARCHAR(1),
+    InnOuts VARCHAR(3),
+    PO VARCHAR(2),
+    A VARCHAR(2),
+    E VARCHAR(1),
+    DP VARCHAR(2),
+    TP VARCHAR(1),
+    PB VARCHAR(1),
+    SB VARCHAR(1),
+    CS VARCHAR(2)
+);
+
+CREATE TABLE dbo.HallOfFame (
+    playerID VARCHAR(9),
+    yearid VARCHAR(4),
+    votedBy VARCHAR(37),
+    ballots VARCHAR(3),
+    needed VARCHAR(3),
+    votes VARCHAR(3),
+    inducted VARCHAR(1),
+    category VARCHAR(17),
+    needed_note VARCHAR(103)
+);
+
+CREATE TABLE dbo.HomeGames (
+    yearkey VARCHAR(4),
+    leaguekey VARCHAR(2),
+    teamkey VARCHAR(3),
+    parkkey VARCHAR(5),
+    spanfirst VARCHAR(10),
+    spanlast VARCHAR(10),
+    games VARCHAR(2),
+    openings VARCHAR(2),
+    attendance VARCHAR(8)
+);
+
+CREATE TABLE dbo.Managers (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    inseason VARCHAR(1),
+    G VARCHAR(3),
+    W VARCHAR(3),
+    L VARCHAR(3),
+    rank VARCHAR(2),
+    plyrMgr VARCHAR(2)
+);
+
+CREATE TABLE dbo.ManagersHalf (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    inseason VARCHAR(1),
+    half VARCHAR(1),
+    G VARCHAR(2),
+    W VARCHAR(2),
+    L VARCHAR(2),
+    rank VARCHAR(3)
+);
+
+CREATE TABLE dbo.Parks (
+    ID VARCHAR(3),
+    parkalias VARCHAR(85),
+    parkkey VARCHAR(5),
+    parkname VARCHAR(38),
+    city VARCHAR(16),
+    state VARCHAR(15),
+    country VARCHAR(3)
+);
+
+CREATE TABLE dbo.People (
+    ID VARCHAR(5),
+    playerID VARCHAR(9),
+    birthYear VARCHAR(4),
+    birthMonth VARCHAR(2),
+    birthDay VARCHAR(2),
+    birthCity VARCHAR(25),
+    birthCountry VARCHAR(14),
+    birthState VARCHAR(22),
+    deathYear VARCHAR(4),
+    deathMonth VARCHAR(2),
+    deathDay VARCHAR(2),
+    deathCountry VARCHAR(15),
+    deathState VARCHAR(20),
+    deathCity VARCHAR(26),
+    nameFirst VARCHAR(14),
+    nameLast VARCHAR(18),
+    nameGiven VARCHAR(43),
+    weight VARCHAR(3),
+    height VARCHAR(2),
+    bats VARCHAR(1),
+    throws VARCHAR(1),
+    debut VARCHAR(10),
+    bbrefID VARCHAR(9),
+    finalGame VARCHAR(10),
+    retroID VARCHAR(9)
+);
+
+CREATE TABLE dbo.Pitching (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    stint VARCHAR(1),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    W VARCHAR(2),
+    L VARCHAR(2),
+    G VARCHAR(3),
+    GS VARCHAR(2),
+    CG VARCHAR(2),
+    SHO VARCHAR(2),
+    SV VARCHAR(2),
+    IPouts VARCHAR(4),
+    H VARCHAR(3),
+    ER VARCHAR(3),
+    HR VARCHAR(2),
+    BB VARCHAR(3),
+    SO VARCHAR(3),
+    BAOpp VARCHAR(5),
+    ERA VARCHAR(5),
+    IBB VARCHAR(2),
+    WP VARCHAR(2),
+    HBP VARCHAR(2),
+    BK VARCHAR(2),
+    BFP VARCHAR(4),
+    GF VARCHAR(2),
+    R VARCHAR(3),
+    SH VARCHAR(2),
+    SF VARCHAR(2),
+    GIDP VARCHAR(3)
+);
+
+CREATE TABLE dbo.PitchingPost (
+    playerID VARCHAR(9),
+    yearID VARCHAR(4),
+    round VARCHAR(5),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    W VARCHAR(1),
+    L VARCHAR(1),
+    G VARCHAR(1),
+    GS VARCHAR(1),
+    CG VARCHAR(1),
+    SHO VARCHAR(1),
+    SV VARCHAR(1),
+    IPouts VARCHAR(3),
+    H VARCHAR(2),
+    ER VARCHAR(2),
+    HR VARCHAR(1),
+    BB VARCHAR(2),
+    SO VARCHAR(2),
+    BAOpp VARCHAR(5),
+    ERA VARCHAR(5),
+    IBB VARCHAR(1),
+    WP VARCHAR(1),
+    HBP VARCHAR(1),
+    BK VARCHAR(1),
+    BFP VARCHAR(3),
+    GF VARCHAR(1),
+    R VARCHAR(2),
+    SH VARCHAR(1),
+    SF VARCHAR(1),
+    GIDP VARCHAR(2)
+);
+
+CREATE TABLE dbo.Salaries (
+    yearID VARCHAR(4),
+    teamID VARCHAR(3),
+    lgID VARCHAR(2),
+    playerID VARCHAR(9),
+    salary VARCHAR(9)
+);
+
+CREATE TABLE dbo.Schools (
+    schoolID VARCHAR(13),
+    name_full VARCHAR(51),
+    city VARCHAR(53),
+    state VARCHAR(15),
+    country VARCHAR(4)
+);
+
+CREATE TABLE dbo.SeriesPost (
+    yearID VARCHAR(4),
+    round VARCHAR(5),
+    teamIDwinner VARCHAR(3),
+    lgIDwinner VARCHAR(2),
+    teamIDloser VARCHAR(3),
+    lgIDloser VARCHAR(2),
+    wins VARCHAR(2),
+    losses VARCHAR(1),
+    ties VARCHAR(2)
+);
+
+CREATE TABLE dbo.Teams (
+    yearID VARCHAR(4),
+    lgID VARCHAR(2),
+    teamID VARCHAR(3),
+    franchID VARCHAR(3),
+    divID VARCHAR(1),
+    Rank VARCHAR(2),
+    G VARCHAR(3),
+    Ghome VARCHAR(2),
+    W VARCHAR(3),
+    L VARCHAR(3),
+    DivWin VARCHAR(1),
+    WCWin VARCHAR(1),
+    LgWin VARCHAR(1),
+    WSWin VARCHAR(1),
+    R VARCHAR(4),
+    AB VARCHAR(4),
+    H VARCHAR(4),
+    2B VARCHAR(3),
+    3B VARCHAR(3),
+    HR VARCHAR(3),
+    BB VARCHAR(3),
+    SO VARCHAR(4),
+    SB VARCHAR(3),
+    CS VARCHAR(3),
+    HBP VARCHAR(3),
+    SF VARCHAR(2),
+    RA VARCHAR(4),
+    ER VARCHAR(4),
+    ERA VARCHAR(4),
+    CG VARCHAR(3),
+    SHO VARCHAR(2),
+    SV VARCHAR(2),
+    IPouts VARCHAR(4),
+    HA VARCHAR(4),
+    HRA VARCHAR(3),
+    BBA VARCHAR(3),
+    SOA VARCHAR(4),
+    E VARCHAR(3),
+    DP VARCHAR(3),
+    FP VARCHAR(5),
+    name VARCHAR(33),
+    park VARCHAR(70),
+    attendance VARCHAR(7),
+    BPF VARCHAR(3),
+    PPF VARCHAR(3),
+    teamIDBR VARCHAR(3),
+    teamIDlahman45 VARCHAR(3),
+    teamIDretro VARCHAR(4)
+);
+
+CREATE TABLE dbo.TeamsFranchises (
+    franchID VARCHAR(3),
+    franchName VARCHAR(33),
+    active VARCHAR(2),
+    NAassoc VARCHAR(4)
+);
+
+CREATE TABLE dbo.TeamsHalf (
+    yearID VARCHAR(4),
+    lgID VARCHAR(2),
+    teamID VARCHAR(3),
+    Half VARCHAR(1),
+    divID VARCHAR(1),
+    DivWin VARCHAR(1),
+    Rank VARCHAR(1),
+    G VARCHAR(2),
+    W VARCHAR(2),
+    L VARCHAR(3)
+);
+
