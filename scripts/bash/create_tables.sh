@@ -3,7 +3,7 @@
 # Directory paths
 CSV_DIR="../../data/csv"
 OUTPUT_FILE="CreateTables.txt"
-AWK_SCRIPT="../awk/csv_to_sql.awk"
+AWK_SCRIPT="../awk/flds.awk"
 
 # Ensure the output file does not exist before starting
 rm -f "$OUTPUT_FILE"
